@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
     buildToolsVersion "30.0.3"
 
     defaultConfig {
@@ -13,7 +13,7 @@ android {
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 23
         versionCode 2
-        versionName "0.2g"
+        versionName "0.2g-dev1"
         setProperty("archivesBaseName", "FireTVStyleKeyboard_" + versionName)
     }
     buildTypes {
@@ -22,12 +22,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'com.amazon.tv.ftvstylekb'
 }
 
 dependencies {
     implementation(fileTree(dir: 'libs', include: ['*.jar']))
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'androidx.preference:preference-ktx:1.1.1'
-    implementation "androidx.fragment:fragment-ktx:1.4.0"
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+    implementation "androidx.fragment:fragment-ktx:1.6.2"
 }
