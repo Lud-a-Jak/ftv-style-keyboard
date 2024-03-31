@@ -7,12 +7,12 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.amazon.tv.ftvstylekb"
+        applicationId "com.fire.tv.style.kb"
         minSdkVersion 15
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 23
         versionCode 2
-        versionName "0.2g-dev1"
+        versionName "0.2f"
         setProperty("archivesBaseName", "FireTVStyleKeyboard_" + versionName)
     }
     buildTypes {
