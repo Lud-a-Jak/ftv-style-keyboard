@@ -22,6 +22,10 @@ android {
         }
     }
     namespace 'com.amazon.tv.ftvstylekb'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 }
 
 dependencies {
