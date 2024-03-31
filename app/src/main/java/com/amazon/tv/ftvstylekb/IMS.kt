@@ -1,5 +1,6 @@
 package com.amazon.tv.ftvstylekb
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.content.res.Resources
@@ -32,10 +33,10 @@ class IMS : InputMethodService() {
     private var kv: View? = null
     private var keyboardView: View? = null
     private var preview: TextView? = null
-    private var keyRu: Array<String> =
-        LangSymbols.KEY_RU_YCU // LangSymbols.KEY_RU_ABV | LangSymbols.KEY_RU_YCU
     private var keyEn: Array<String> =
         LangSymbols.KEY_EN_QWE // LangSymbols.KEY_EN_ABC | LangSymbols.KEY_EN_QWE
+    private var keyRu: Array<String> =
+        LangSymbols.KEY_RU_YCU // LangSymbols.KEY_RU_ABV | LangSymbols.KEY_RU_YCU
     private val allSymbols: Array<String> = LangSymbols.SYMBOLS
     private var cursorEnd = 0
     private var extractedText: ExtractedText? = null
@@ -80,13 +81,6 @@ class IMS : InputMethodService() {
     private var deleteSpeed = 1
     private var actionEnter = 0
     private var inputType = 0
-    override fun onCreate() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            enableHardwareAcceleration()
-        }
-        super.onCreate()
-        val mInputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-    }
 
     override fun onCreateInputView(): View? {
         keyboardView = layoutInflater.inflate(R.layout.keyboard, null)
@@ -97,10 +91,10 @@ class IMS : InputMethodService() {
         val context = applicationContext
         val prefs = PreferenceManager.getDefaultSharedPreferences(context)
         if (prefs.getString(context.getString(R.string.app_layout_pref_key), "qwerty") == "abc") {
-            keyRu = LangSymbols.KEY_RU_ABV
             keyEn = LangSymbols.KEY_EN_ABC
+            keyRu = LangSymbols.KEY_RU_ABV
         }
-        kv = if (keyboard) setLang(keyRu) else setLang(keyEn)
+        kv = if (keyboard) setLang(keyEn) else setLang(keyRu)
         val frameLayout = keyboardView?.findViewById<FrameLayout>(R.id.keyboard1)
         frameLayout?.addView(kv)
         keyboardView?.invalidate()

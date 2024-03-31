@@ -18,7 +18,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onPreferenceTreeClick(preference: Preference): Boolean {
         val context = requireContext()
-        if (preference?.key == context.getString(R.string.show_app_label_pref_key)) {
+        if (preference.key == context.getString(R.string.show_app_label_pref_key)) {
             val hide = !getLauncherIconShown(context, SettingsActivity::class.java)
             setLauncherIconShown(context, SettingsActivity::class.java, hide)
             return true

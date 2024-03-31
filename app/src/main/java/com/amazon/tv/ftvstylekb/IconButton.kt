@@ -59,13 +59,12 @@ class IconButton : Button {
         val textWidth = bounds!!.width()
         val factor = if (drawablePosition == DrawablePositions.LEFT_AND_RIGHT) 2 else 1
         val contentWidth = drawableWidth + iconPadding * factor + textWidth
-        val horizontalPadding: Int
-//        if (textWidth > getWidth() / 2) {
+        //        if (textWidth > getWidth() / 2) {
 //            horizontalPadding = (int) (getResources().getDimension(R.dimen.keyboard_icon_margin) + (getWidth() / 2.0) - (contentWidth / 2.0));
 //        } else {
 //            horizontalPadding = (int) ((getWidth() / 2.0) - (contentWidth / 2.0));
 //        }
-        horizontalPadding = (width / 2.0 - contentWidth / 2.0).toInt()
+        val horizontalPadding: Int = (width / 2.0 - contentWidth / 2.0).toInt()
         compoundDrawablePadding = -horizontalPadding + iconPadding
         when (drawablePosition) {
             DrawablePositions.LEFT -> setPadding(horizontalPadding, paddingTop, 0, paddingBottom)
