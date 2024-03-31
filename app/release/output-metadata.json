@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.amazon.tv.ftvstylekb",
+  "applicationId": "com.fire.tv.style.kb",
   "variantName": "release",
   "elements": [
     {
@@ -12,9 +12,26 @@
       "filters": [],
       "attributes": [],
       "versionCode": 2,
-      "versionName": "0.2g",
-      "outputFile": "FireTVStyleKeyboard_0.2g-release.apk"
+      "versionName": "0.2f",
+      "outputFile": "FireTVStyleKeyboard_0.2f-release.apk"
     }
   ],
-  "elementType": "File"
+  "elementType": "File",
+  "baselineProfiles": [
+    {
+      "minApi": 28,
+      "maxApi": 30,
+      "baselineProfiles": [
+        "baselineProfiles/1/FireTVStyleKeyboard_0.2f-release.dm"
+      ]
+    },
+    {
+      "minApi": 31,
+      "maxApi": 2147483647,
+      "baselineProfiles": [
+        "baselineProfiles/0/FireTVStyleKeyboard_0.2f-release.dm"
+      ]
+    }
+  ],
+  "minSdkVersionForDexing": 15
 }
